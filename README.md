@@ -2,13 +2,13 @@
 
 ## Raspberry Pi2への接続方法
 
-基本的にはSSHを使用しての接続になります．Windows([TeraTerm](http://ttssh2.osdn.jp)など)，Mac(Terminal)ともに接続可能です．接続コマンドは以下のようになります．
+基本的には **SSHを使用しての接続** になります．Windows([TeraTerm](http://ttssh2.osdn.jp)など)，Mac(Terminal)ともに接続可能です．接続コマンドは以下のようになります．
 
 ```
 ssh pi@[hostname].local
 ```
 
-[hostname]の部分にはRaspberry PiのHost名が入ります．その後，パスワードを求められるので，適切なパスワードを入れてください．接続が成功すると，以下のような感じになります．
+**[hostname]の部分にはRaspberry PiのHost名が入ります．** その後，パスワードを求められるので，適切なパスワードを入れてください．接続が成功すると，以下のような感じになります．
 
 ```
 MBP-2: $ ssh pi@hci1.local
@@ -26,7 +26,7 @@ pi@hci1:~ $
 
 ## RTCモジュールの設定方法
 
-RTCモジュールはネット環境に繋がっていなくても，一定の時刻を保つために使用します．そのためには，RaspberryPi起動時に，自動的にRTCモジュールの時刻を読み込む必要があります．
+RTCモジュールはネット環境に繋がっていなくても，一定の時刻を保つために使用します．そのためには，**RaspberryPi起動時に，自動的にRTCモジュールの時刻を読み込む必要があります．**
 
 ### Raspberry Pi上での確認方法
 
