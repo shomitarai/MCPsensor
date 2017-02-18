@@ -1,5 +1,16 @@
 # Raspberry Pi2 での設定Tips
 
+## 事前準備
+
+以下のコマンドでpythonのライブラリ「spidev」を導入してください．
+
+```terminal
+cd
+git clone git://github.com/doceme/py-spidev
+cd py-spidev
+sudo python setup.py install
+```
+
 ## 接続方法
 
 基本的には **SSHを使用しての接続** になります．Windows([TeraTerm](http://ttssh2.osdn.jp)など)，Mac(Terminal)ともに接続可能です．接続コマンドは以下のようになります．
