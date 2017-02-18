@@ -40,21 +40,31 @@ sudo python setup.py install
 
 RTCモジュールはネット環境に繋がっていなくても，一定の時刻を保つために使用します．そのためには，**RaspberryPi起動時に，自動的にRTCモジュールの時刻を読み込む必要があります．**
 
+### RaspberryPiの時刻を確認
+
+```
+timedatectl status
+```
+
 ### RTCモジュールの時刻を確認
 
 以下のコマンドを打つことでRTCモジュール内の時刻を確認することができます．
 
 ```
-  sudo modprobe -c | grep 3231
-  sudo modprobe rtc-ds3232
-  echo ds3231 0x68 | sudo tee /sys/class/i2c-adapter/i2c-1/new_device
-  pi@hci1:~ $ sudo hwclock -r
-  2017年02月17日 04時45分21秒  -0.946369 seconds
+sudo modprobe -c | grep 3231
+sudo modprobe rtc-ds3232
+echo ds3231 0x68 | sudo tee /sys/class/i2c-adapter/i2c-1/new_device
+sudo hwclock -r
+>> 2017年02月17日 04時45分21秒  -0.946369 seconds
 ```
 
 ### RTCモジュールへ時刻を書き込み
 
 RTCモジュール内に正しい時刻を書き込む必要があります．RaspberryPiをインターネットに接続して，正しい時刻に同期されているか確認しましょう．時刻の確認は以下のように行うことができます．
+
+```
+sudo hwclock -w
+```
 
 ### 起動時に自動で同期する設定
 
