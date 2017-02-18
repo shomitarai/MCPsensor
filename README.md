@@ -1,5 +1,11 @@
 # Raspberry Pi2 での設定Tips
 
+## インストール
+
+```
+git clone git@github.com:shomitarai/MCPsensor.git
+```
+
 ## 接続方法
 
 基本的には **SSHを使用しての接続** になります．Windows([TeraTerm](http://ttssh2.osdn.jp)など)，Mac(Terminal)ともに接続可能です．接続コマンドは以下のようになります．
@@ -101,6 +107,21 @@ sudo hwclock -s
 #-------------------------------------------------------------
 
 exit 0
+```
+
+書き込みが終わったら，`sudo reboot`で再起動し，時刻を確認します．
+
+```
+timedatectl status
+
+Local time: 金 2017-02-17 10:02:22 UTC
+Universal time: 金 2017-02-17 10:02:22 UTC
+RTC time: 金 2017-02-17 10:02:22
+Time zone: Etc/UTC (UTC, +0000)
+NTP enabled: no
+NTP synchronized: no
+RTC in local TZ: no
+DST active: n/a
 ```
 
 # #
