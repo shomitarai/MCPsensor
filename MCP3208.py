@@ -42,7 +42,7 @@ class MCP3208:
                 reply = reply_bitstring[5:19]
                 return int(reply, 2)
         # specify reading frequency(Hz)
-        def read_4ch(self, frequency=20):
+        def read_7ch(self, frequency=20):
             countSummationNumber =0
             startSummationTime = time.time()
             ch1=0
@@ -50,14 +50,18 @@ class MCP3208:
             ch3=0
             ch4=0
             ch5=0
+            ch6=0
+            ch7=0
             while time.time()-startSummationTime <= 1.0/float(frequency):
                 ch1 += self.read(0)
                 ch2 += self.read(1)
                 ch3 += self.read(2)
                 ch4 += self.read(3)
                 ch5 += self.read(4)
+                ch6 += self.read(5)
+                ch7 += self.read(6)
                 countSummationNumber += 1
-            return [ch1/countSummationNumber, ch2/countSummationNumber, ch3/countSummationNumber, ch4/countSummationNumber, ch5/countSummationNumber]
+            return [ch1/countSummationNumber, ch2/countSummationNumber, ch3/countSummationNumber, ch4/countSummationNumber, ch5/countSummationNumber, ch6/countSummationNumber, ch7/countSummationNumber]
 
 if __name__ == '__main__':
     spi = MCP3208(0)

@@ -23,7 +23,11 @@ class FileSaveManager:
         f.close()
         self.saveCounter += 1
         return self.saveCounter
-
+    def save(self, name, dataSequence):
+        f = open(name+'.csv', 'w')
+        csv.writer(f).writerows(dataSequence)
+        f.close()
+        
 
 # --------------Use for debug--------------
 if __name__ == '__main__':

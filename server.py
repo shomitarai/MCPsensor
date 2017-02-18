@@ -30,13 +30,13 @@ startTime = time.time()
 
 #-----------------Set Parameter------------------
 frequency = 20 #Hz
-saveSpan = 10 #sec
+saveSpan = 60 #sec
 #------------------------------------------------
 
 
 while True:
     #Get Data   20Hz(sum of integration)
-    inputData = [time.time()-startTime] + spi.read_5ch(frequency)
+    inputData = [datetime.now().strftime("%Y/%m/%d/%H:%M:%S:")+str(datetime.now().microsecond)] + spi.read_7ch(frequency)
 
     #TODO Gesture Recognition
     # inputData.append(gestureWasRecognized)
@@ -44,13 +44,14 @@ while True:
     dataSequence.append(inputData)
 
     # TODO for debug
-    print inputData
+    # print inputData
 
     #Save data every 10 min to prevent data crashing (or program)
     if (time.time()-startTime) >= saveSpan:
+        fileSave.save(datetime.now().strftime("%Y_%m_%d/%H:%M:%S")+str(datetime.now().microsecond), dataSequence)
         #if Time 10min save Data sequence  data_seq=[time, ch1, ch2, ch3, ch4, GestureRecognition]
-        if fileSave.saveCSV(dataSequence) == 10:
-            break
+        # if fileSave.saveCSV(dataSequence) == 10:
+        #     break
         # Initialize variable
         dataSequence = []
         startTime = time.time()
