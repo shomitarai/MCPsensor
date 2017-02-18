@@ -1,16 +1,5 @@
 # Raspberry Pi2 での設定Tips
 
-## 事前準備
-
-以下のコマンドでpythonのライブラリ「spidev」を導入してください．
-
-```terminal
-cd
-git clone git://github.com/doceme/py-spidev
-cd py-spidev
-sudo python setup.py install
-```
-
 ## 接続方法
 
 基本的には **SSHを使用しての接続** になります．Windows([TeraTerm](http://ttssh2.osdn.jp)など)，Mac(Terminal)ともに接続可能です．接続コマンドは以下のようになります．
@@ -33,6 +22,18 @@ Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
 permitted by applicable law.
 Last login: Sat Feb 11 12:33:39 2017
 pi@hci1:~ $
+```
+
+## 事前準備
+
+以下のコマンドでpythonのライブラリ「spidev」を導入してください．
+
+```terminal
+cd
+sudo apt-get install python2.7-dev
+git clone git://github.com/doceme/py-spidev
+cd py-spidev
+sudo python setup.py install
 ```
 
 ## RTCモジュール
@@ -91,3 +92,5 @@ sudo hwclock -s
 
 exit 0
 ```
+
+# #
