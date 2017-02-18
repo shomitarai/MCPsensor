@@ -14,8 +14,8 @@ from MCP3208 import MCP3208
 from fileSaveManager import FileSaveManager
 
 #TODO Wait start Flag
-if raw_input()=='a':
-    exit()
+# if raw_input()=='a':
+#     exit()
 
 start_date = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
 
