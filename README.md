@@ -3,7 +3,8 @@
 ## インストール
 
 ```
-git clone git@github.com:shomitarai/MCPsensor.git
+cd
+git clone git://github.com/shomitarai/MCPsensor
 ```
 
 ## 接続方法
