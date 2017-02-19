@@ -44,7 +44,7 @@ while True:
     dataSequence.append(inputData)
 
     # TODO for debug
-    # print inputData
+    print inputData
 
     #Save data every 10 min to prevent data crashing (or program)
     if (time.time()-startTime) >= saveSpan:
