@@ -52,6 +52,7 @@ class MCP3208:
             ch5=0
             ch6=0
             ch7=0
+            ch8=0
             while time.time()-startSummationTime <= 1.0/float(frequency):
                 ch1 += self.read(0)
                 ch2 += self.read(1)
@@ -60,8 +61,9 @@ class MCP3208:
                 ch5 += self.read(4)
                 ch6 += self.read(5)
                 ch7 += self.read(6)
+                ch8 += self.read(7)
                 countSummationNumber += 1
-            return [ch1/countSummationNumber, ch2/countSummationNumber, ch3/countSummationNumber, ch4/countSummationNumber, ch5/countSummationNumber, ch6/countSummationNumber, ch7/countSummationNumber]
+            return [ch1/countSummationNumber, ch2/countSummationNumber, ch3/countSummationNumber, ch4/countSummationNumber, ch5/countSummationNumber, ch6/countSummationNumber, ch7/countSummationNumber, ch8/countSummationNumber]
 
 if __name__ == '__main__':
     spi = MCP3208(0)
