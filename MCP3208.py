@@ -56,8 +56,8 @@ class MCP3208:
             while time.time()-startSummationTime <= 1.0/float(frequency):
                 ch1 += self.read(0)
                 ch2 += self.read(1)
-                ch3 += self.read(2)
-                ch4 += self.read(3)
+                ch3 += abs(self.read(2)-2030)
+                ch4 += abs(self.read(3)-2030)
                 ch5 += self.read(4)
                 ch6 += self.read(5)
                 ch7 += self.read(6)
