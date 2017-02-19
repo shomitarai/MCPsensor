@@ -109,7 +109,9 @@ if [ "$_IP" ]; then
 fi
 
 #---------------------------追加部分---------------------------
+sudo update-rc.d fake-hwclock disable
 echo ds3231 0x68 | sudo tee /sys/class/i2c-adapter/i2c-1/new_device
+sleep 1
 sudo hwclock -s
 #-------------------------------------------------------------
 
