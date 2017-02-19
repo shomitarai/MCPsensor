@@ -1,5 +1,11 @@
 # Raspberry Pi2 での設定Tips
 
+## シャットダウン方法
+
+```
+sudo shutdown -h now
+```
+
 ## インストール
 
 ```
