@@ -48,7 +48,7 @@ while True:
 
     #Save data every 10 min to prevent data crashing (or program)
     if (time.time()-startTime) >= saveSpan:
-        fileSave.save(datetime.now().strftime("%Y_%m_%d/%H:%M:%S")+str(datetime.now().microsecond), dataSequence)
+        fileSave.save(datetime.now().strftime("%Y_%m_%d_%H:%M:%S")+str(datetime.now().microsecond), dataSequence)
         #if Time 10min save Data sequence  data_seq=[time, ch1, ch2, ch3, ch4, GestureRecognition]
         # if fileSave.saveCSV(dataSequence) == 10:
         #     break
